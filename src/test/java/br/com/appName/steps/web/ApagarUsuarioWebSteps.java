@@ -25,6 +25,7 @@ public class ApagarUsuarioWebSteps {
         //Thread.sleep(1000);
         System.out.println("Apagando usuário...");
         this.delUserWebFuncionalidade.deletarUsuarios();
+        Thread.sleep(2000);
     }
 
     @Entao("^visualizo na pagina \"([^\"]*)\"$")

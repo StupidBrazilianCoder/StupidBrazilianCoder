@@ -20,7 +20,7 @@ public class AcessarListaUsuariosWebPage {
     @FindBy(xpath = "/html/body/div[3]/div/table/tbody/tr[10]/td[11]/a")
     private WebElement linkLixeira;
 
-    @FindBy(xpath = "//p[@id='notice']")
+    @FindBy(id = "notice")
     private WebElement msgConfirma;
 
     public WebElement getMsgConfirma() {
