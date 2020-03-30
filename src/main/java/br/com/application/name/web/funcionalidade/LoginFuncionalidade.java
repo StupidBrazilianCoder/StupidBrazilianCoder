@@ -19,7 +19,7 @@ public class LoginFuncionalidade extends BaseTest {
 	public void loginAplicacao(String user) {
 		if (webDriver != null)
 			webDriver.quit();
-		initializeWebApplication(Web.CHROME);
+		initializeWebApplication(Web.CHROME_WINDOWS);
 		webDriver.get(PropertiesManager.getPropertiesValue("URL_QA"));
 		this.login = new LoginPage(webDriver);
 		user = "USUARIO_"+user;

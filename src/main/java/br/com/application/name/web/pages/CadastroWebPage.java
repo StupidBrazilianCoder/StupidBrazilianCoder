@@ -25,7 +25,6 @@ public class CadastroWebPage {
     @FindBy(xpath = "//input[@name='commit']")
     private WebElement btnCriar;
 
-
     public WebElement getInputNome() {
         return inputNome;
     }

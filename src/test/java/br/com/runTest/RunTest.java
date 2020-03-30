@@ -18,7 +18,7 @@ import cucumber.api.junit.Cucumber;
 
 //Limpar RunTest antes de subir
 
-        tags = {"@cadastro1"})
+        tags = {"@web, @cadastro1, @remover"})
 
 
 public class RunTest extends BaseTest {

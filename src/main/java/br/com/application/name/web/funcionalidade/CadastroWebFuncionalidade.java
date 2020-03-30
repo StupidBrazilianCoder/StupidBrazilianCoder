@@ -14,9 +14,9 @@ public class CadastroWebFuncionalidade extends BaseTest {
 
     public void preencheFormulario(){
         wait.until(ExpectedConditions.visibilityOf(this.cadastroWebPage.getInputNome()));
-        this.cadastroWebPage.getInputNome().sendKeys("Marcos");
-        this.cadastroWebPage.getInputSobrenome().sendKeys("nBarbosa");
-        this.cadastroWebPage.getInputEmail().sendKeys("teste@teste.cm.br");
+        this.cadastroWebPage.getInputNome().sendKeys("AAAAAAAAAAAAAAA");
+        this.cadastroWebPage.getInputSobrenome().sendKeys("AAAAA");
+        this.cadastroWebPage.getInputEmail().sendKeys("aaaaaa@aaaaa.com.br");
         this.cadastroWebPage.getBtnCriar().click();
     }
 }

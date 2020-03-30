@@ -17,7 +17,11 @@ import cucumber.api.java.Before;
  */
 public class Hooks extends BaseTest {
 
-
+	@Before(value = "@remover")
+	public void beforeTestRemover() {
+		System.out.println("Teste deletar usuario");
+		initializeWebApplication(Web.CHROME_WINDOWS);
+	}
 	@Before(value = "@cockpitqa")
 	public void beforeScenarioMobileCockpitQa() {
 		System.out.println("Teste execução Hooks Mobile");
@@ -59,7 +63,7 @@ public class Hooks extends BaseTest {
 	@Before(value = "@web")
 	public void beforeScenarioWebWindows() {
 		System.out.println("Teste execução Hooks Web");
-		initializeWebApplication(Web.CHROME);
+		initializeWebApplication(Web.CHROME_WINDOWS);
 	}
 
 	@After(value = "@cockpit")
@@ -106,6 +110,11 @@ public class Hooks extends BaseTest {
 	public void afterScenarioCockpitPreprod(Scenario scenario) {
 		generateEvidence(scenario);
 		evidenceList.clear();
+	}
+
+	@After(value = "@remover")
+	public void afterTestRemover() {
+		closeWeb();
 	}
 
 }

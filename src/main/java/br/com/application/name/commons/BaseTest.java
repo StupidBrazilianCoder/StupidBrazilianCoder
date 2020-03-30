@@ -4,11 +4,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.
-		WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import br.com.application.name.mobile.interfaces.AccountCredentialsUsers;
@@ -33,6 +30,7 @@ public class BaseTest {
 	protected static WebDriver webDriver;
 	protected static List<SeleniumEvidence> evidenceList = new ArrayList<SeleniumEvidence>();
 	protected static WebDriverWait wait;
+	protected static Alert alert;
 	protected static WebDriverWait shortWait;
 	protected static AccountCredentialsUsers credentialsUsers;
 	protected static boolean initialized;
@@ -46,6 +44,10 @@ public class BaseTest {
 	public void setCiclo(String cycle) {
 		evidence.setCiclo(cycle);
 
+	}
+	public void alertText() {
+		alert = webDriver.switchTo().alert();
+		alert.accept();
 	}
 
 	public void setTester(String tester) {
@@ -94,7 +96,7 @@ public class BaseTest {
 	 */
 	protected void initializeWebApplication(WebApplication webApplication) {
 		webDriver = webApplication.getDriver();
-		webDriver.manage().window().fullscreen();
+		webDriver.manage().window().maximize();
 		webDriver.get(PropertiesManager.getPropertiesValue("URL_QA"));
 		wait = new WebDriverWait(webDriver, 80);
 	}
